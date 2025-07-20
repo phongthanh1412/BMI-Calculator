@@ -6,12 +6,10 @@ const inchEl = document.getElementById('inch');
 const stEl = document.getElementById('st');
 const lbsEl = document.getElementById('lbs');
 const classification = document.getElementById('classification');
-const minWeight = document.getElementById('min-weight');
-const maxWeight = document.getElementById('max-weight');
 const resultEl = document.getElementById('result');
 const containerResult = document.getElementById('container-result');
 const bmiEl = document.getElementById('bmi');
-const welcome = document.getElementById('welcome');
+const validmsg = document.getElementById('valid-msg');
 
 const metricBtn = document.getElementById('metric');
 const imperialBtn = document.getElementById('imperial');
@@ -31,19 +29,13 @@ function calculateBMI() {
     if (!height || !weight) return;
 
     bmiEl.style.display = 'flex';
-    welcome.style.display = 'none';
+    validmsg.style.display = 'none';
 
     const bmi = ((weight / (height * height)) * 10000).toFixed(1);
-    const heightM = height / 100;
-    const min = (18.5 * heightM * heightM).toFixed(1);
-    const max = (24.9 * heightM * heightM).toFixed(1);
-
     resultEl.innerText = bmi;
-    minWeight.innerText = `${min}kgs`;
-    maxWeight.innerText = `${max}kgs`;
 
     classifyBMI(bmi);
-    console.log('height:', height, 'weight:', weight, 'bmi:', bmi, 'heightM:', heightM, 'test');
+    console.log('height:', height, 'weight:', weight, 'bmi:', bmi);
   } else {
     const feet = parseInt(feetEl.value) || 0;
     const inch = parseInt(inchEl.value) || 0;
@@ -53,24 +45,13 @@ function calculateBMI() {
     if (!feet || !inch || !st || !lbs) return;
 
     bmiEl.style.display = 'flex';
-    welcome.style.display = 'none';
+    validmsg.style.display = 'none';
 
     const heightInInches = feet * 12 + inch;
     const weightInPounds = st * 14 + lbs;
     const bmi = ((703 * weightInPounds) / (heightInInches * heightInInches)).toFixed(1);
 
     resultEl.innerText = bmi;
-
-    const minOptimalWeightPounds = (18.5 * (heightInInches * heightInInches)) / 703;
-    const maxOptimalWeightPounds = (24.9 * (heightInInches * heightInInches)) / 703;
-
-    const minWeightInStone = Math.floor(minOptimalWeightPounds / 14);
-    const minWeightInPounds = Math.round(minOptimalWeightPounds % 14);
-    const maxWeightInStone = Math.floor(maxOptimalWeightPounds / 14);
-    const maxWeightInPounds = Math.round(maxOptimalWeightPounds % 14);
-
-    minWeight.innerText = `${minWeightInStone}st ${minWeightInPounds}lbs`;
-    maxWeight.innerText = `${maxWeightInStone}st ${maxWeightInPounds}lbs`;
 
     classifyBMI(bmi);
     console.log('bmi:', bmi);
@@ -79,15 +60,18 @@ function calculateBMI() {
 
 // Classify BMI
 function classifyBMI(bmi) {
+  let category = '';
   if (bmi < 18.5) {
-    classification.innerText = 'Underweight';
+    category = 'Underweight';
   } else if (bmi >= 18.5 && bmi <= 24.9) {
-    classification.innerText = 'Healthy weight';
+    category = 'Healthy weight';
   } else if (bmi > 24.9 && bmi <= 29.9) {
-    classification.innerText = 'Overweight';
+    category = 'Overweight';
   } else {
-    classification.innerText = 'Obese';
+    category = 'Obese';
   }
+  classification.innerText = category;
+  console.log('Classification:', category); // Debug để kiểm tra
 }
 
 // Reset function
@@ -99,12 +83,10 @@ function resetForm() {
   stEl.value = '';
   lbsEl.value = '';
   resultEl.innerText = '';
-  minWeight.innerText = '';
-  maxWeight.innerText = '';
   classification.innerText = '';
   bmiEl.style.display = 'none';
-  welcome.style.display = 'block';
-  updateButtonState(); 
+  validmsg.style.display = 'block';
+  updateButtonState();
 }
 
 // Limit input length
@@ -115,7 +97,7 @@ function limitLength() {
   if (inchEl.value.length > 2) inchEl.value = inchEl.value.slice(0, 2);
   if (lbsEl.value.length > 2) lbsEl.value = lbsEl.value.slice(0, 2);
   if (stEl.value.length > 2) stEl.value = stEl.value.slice(0, 2);
-  updateButtonState(); 
+  updateButtonState();
 }
 
 // Update button state based on input values
@@ -164,7 +146,7 @@ radioButtons.forEach((btn) => {
       imperialBtn.classList.remove('active');
       e.target.classList.add('active');
     }
-    updateButtonState(); 
+    updateButtonState();
     console.log(e.target, metricBtn);
   });
 });
