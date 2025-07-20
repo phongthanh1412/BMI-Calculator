@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <title>BMI Estimator</title>
 </head>
+
 <body>
   <div class="container">
     <header class="header">
@@ -16,16 +17,19 @@
           <div class="logo"><img src="./assets/images/logo.svg" alt="" /></div>
           <h1>BMI Calculator</h1>
           <p>
-            Use our Body Mass Index (BMI) calculator to better understand how your 
-            weight relates to your height. While BMI isn't the only indicator of a 
-            healthy weight, it provides a helpful starting point for assessing your 
-            overall health and well-being.
+            BMI (body mass index) is a tool for adults that helps determine if your weight falls into
+            the underweight, healthy, or overweight categories relative to your height. Essentially, the BMI calculation
+            provides a quick snapshot of how your weight compares to typical values. It's calculated by taking your
+            weight
+            in kilograms and dividing it by the square of your height in meters BMI = weight/height<sup>2</sup>.
+            This simple formula gives you an idea of whether your weight is generally in a healthy range for your
+            height.
           </p>
         </div>
         <div class="calculator">
           <div class="form" id="form">
             <h3>Calculate your BMI</h3>
-              <label for="units">Units</label>
+            <label for="units">Units</label>
             <div class="units">
               <div class="form-control">
                 <input type="radio" name="input" value="metric" id="metric" class="radio active" checked />
@@ -82,147 +86,190 @@
                   </div>
                 </div>
               </div>
-
+            </div>
+            <!-- Thêm nút Calculate và Reset -->
+            <div class="button-group">
+              <button id="calculateBtn">Calculate</button>
+              <button id="resetBtn">Reset</button>
             </div>
           </div>
-          
         </div>
         <div class="container-result" id="container-result">
-            <div class="bmi" id="bmi">
-              <div class="result-heading" id="result-heading">
-                <p>Result</p>
-                <div class="result" id="result">23.4</div>
-              </div>
-              <div class="result-text">
-                <p>You are in the <span id="classification"></span> range <span
-                    id="min-weight"></span> - <span id="max-weight"></span></span></p>
-              </div>
+          <div class="bmi" id="bmi">
+            <div class="result-heading" id="result-heading">
+              <p>Result</p>
+              <div class="result" id="result">23.4</div>
             </div>
-            <div class="welcome-text" id="welcome">
-              <h3>Result</h3>
-              <p>No result calculated. Please enter your height and weight.</p>
+            <div class="result-text">
+              <p>You are in the <span id="classification"></span> range <span id="min-weight"></span> - <span
+                  id="max-weight"></span></span></p>
             </div>
-            </p>
           </div>
+          <div class="welcome-text" id="welcome">
+            <p>Result<p>        
+          </div>
+          <div class="welcome-content" id="welcomecontent">
+            <p>No result calculated. Please enter your height and weight.</p>
+        </div>
       </div>
     </header>
     <main>
       <!-- Section explanation -->
       <section class="explanation">
-        <!-- <img src="assets/images/pattern-curved-line-left.svg" alt="curve" class="curve-left"> -->
         <div class="image">
-          <!-- <img src="assets/images/full-body-workout.jpg" alt="man-eating" /> -->
         </div>
         <div class="content">
           <h2>What your BMI result means</h2>
-          <p>
-            A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-            Maintaining a healthy weight may lower your chances of experiencing
-            health issues later on, such as obesity and type 2 diabetes. Aim for
-            a nutritious diet with reduced fat and sugar content, incorporating
-            ample fruits and vegetables. Additionally, strive for regular
-            physical activity, ideally about 30 minutes daily for five days a
-            week.
-          </p>
+          <section class="Underweight">
+            <h3>Underweight</h3>
+            <p>
+              Being underweight can lead to a deficiency in essential nutrients, impacting your skin, hair,
+              and teeth, and causing fatigue. Women, in particular, might experience irregular menstrual cycles
+              and an increased risk of osteoporosis. It's recommended to consult your doctor to understand the
+              cause of your low BMI and to develop a healthy weight gain plan.
+            </p>
+          </section>
+          <section class="Healthy-weight">
+            <h3>Healthy weight</h3>
+            <p>
+              While a healthy BMI suggests you're at an appropriate weight for your height, it does not offer
+              a complete picture of your body's composition, like your muscle-to-fat ratio, activity levels,
+              or body type. Therefore, it's essential to monitor your overall health, diet, exercise habits,
+              and any weight fluctuations.
+            </p>
+          </section>
+          <section class="overweight">
+            <h3>Overweight</h3>
+            <p>
+              Having a BMI in the overweight range can significantly increase your risk of developing several
+              serious health conditions. You might be more susceptible to chronic diseases like type 2 diabetes,
+              which affects how your body processes sugar, and heart disease, a broad term for conditions that
+              affect your heart and blood vessels. Additionally, being overweight can elevate your chances of
+              developing gallstones, hardened deposits in your gallbladder, and even certain types of cancer.
+            </p>
+          </section>
+          <section class="obesity">
+            <h3>Obesity</h3>
+            <p>
+              A BMI of 30 or higher signals obesity, significantly raising your risk for serious health issues.
+              This includes a much higher chance of developing heart disease, type 2 diabetes, and certain
+              cancers.
+              It's crucial to discuss these risks with your doctor to find ways to manage your weight and improve
+              your health.
+            </p>
+          </section>
         </div>
       </section>
-      <!-- Section Habits -->
-      <section class="positive-habits">
-        <div>
-          <!-- <img src="assets/images/icon-eating.svg" alt="eating" /> -->
-          <div>
-            <h3>Healthy Eating</h3>
-            <p>
-              Healthy eating promotes weight control, disease prevention, better
-              digestion, immunity, mental clarity, and mood.
-            </p>
-          </div>
-        </div>
-        <div>
-          <!-- <img src="assets/images/icon-exercise.svg" alt="exercise" /> -->
-          <div>
-            <h3>Regular exercise</h3>
-            <p>
-              Exercise improves fitness, aids weight control, elevates mood, and
-              reduces disease risk, fostering wellness and longevity.
-            </p>
-          </div>
-        </div>
-        <div>
-          <!-- <img src="assets/images/icon-sleep.svg" alt="sleep" /> -->
-          <div>
-            <h3>Adequate sleep</h3>
-            <p>
-              Sleep enhances mental clarity, emotional stability, and physical
-              wellness, promoting overall restoration and rejuvenation.
-            </p>
-          </div>
-        </div>
-      </section>
+
       <!-- Section Limitations -->
       <section class="limitations">
-        <!-- <img src="assets/images/pattern-curved-line-right.svg" alt="curve" class="curve"> -->
         <div class="limitations-content">
-          <h2>Limitations of BMI</h2>
+          <h2>Specific cases where BMI may not apply</h2>
           <p>
-            Although BMI is often a practical indicator of healthy weight, it is
-            not suited for every person. Specific groups should carefully consider
-            their BMI outcomes, and in certain cases, the measurement may not be
-            beneficial to use.
+            While BMI is generally a useful way to gauge a healthy weight, it's not a perfect fit for everyone.
+            Certain individuals should view their BMI results with caution, and for some, the measurement might
+            not be helpful at all.
           </p>
         </div>
         <div class="cards">
-          <div class="card gender">
+          <div class="card children">
             <div class="card-heading">
-              <!-- <img src="assets/images/icon-gender.svg" alt="" /> -->
-              <h4>Gender</h4>
+              <h3>Children</h3>
             </div>
             <p>
-              The development and body fat composition of girls and boys vary
-              with age. Consequently, a child's age and gender are considered
-              when evaluating their BMI.
+              For children and young people aged 2 to 18, BMI calculation differs significantly from adults. This
+              is because children are still growing, and boys and girls develop at varying rates. A specialized
+              children's
+              BMI calculator takes into account age, children, height, and weight. The result is presented as a
+              "centile"
+              number. This centile indicates how a child's BMI compares to other children of the same age and children.
+              For example, if a boy is on the 60th centile, it means he is heavier than 60 out of 100 other boys his
+              age.
             </p>
           </div>
           <div class="card age">
             <div class="card-heading">
-              <!-- <img src="assets/images/icon-age.svg" alt="" /> -->
-              <h4>Age</h4>
+              <h3>Old people</h3>
             </div>
             <p>
-              In aging individuals, increased body fat and muscle loss may cause
-              BMI to underestimate body fat content.
+              As we age, our bodies naturally undergo changes, including an increase in fat mass and a decrease in
+              muscle
+              mass. Because of this shift in body composition, the BMI (Body Mass Index), which primarily considers
+              weight
+              and height, may not be a truly reliable indicator of health or body fat for individuals over 60. It's
+              important
+              to remember that for older adults, other factors beyond just BMI might offer a clearer picture of their
+              overall
+              health and well-being.
             </p>
           </div>
           <div class="card muscle">
             <div class="card-heading">
-              <!-- <img src="assets/images/icon-muscle.svg" alt="" /> -->
-              <h4>Muscle</h4>
+              <h3>Muscular people</h3>
             </div>
             <p>
-              BMI may misclassify muscular individuals as overweight or obese,
-              as it doesn't differentiate muscle from fat.
+              BMI can be misleading for very muscular individuals, like weight trainers and athletes. Since muscle
+              weighs more
+              than fat, highly muscled people might register as obese on the BMI scale even when they are, in fact, at a
+              healthy
+              weight for their body composition.
             </p>
           </div>
           <div class="card pregnancy">
             <div class="card-heading">
-              <!-- <img src="assets/images/icon-pregnancy.svg" alt="" /> -->
-              <h4>Pregnancy</h4>
+              <h3>Pregnant women</h3>
             </div>
             <p>
-              Expectant mothers experience weight gain due to their growing
-              baby. Maintaining a healthy pre-pregnancy BMI is advisable to
-              minimise health risks for both mother and child.
+              When pregnant, it's natural to gain weight due to your growing baby and the surrounding amniotic fluid.
+              This makes
+              it challenging to pinpoint your "true" pre-pregnancy weight. If you have concerns about your weight during
+              pregnancy
+              , it's best to consult your midwife or GP.
             </p>
           </div>
           <div class="card race">
             <div class="card-heading">
-              <!-- <img src="assets/images/icon-race.svg" alt="" /> -->
-              <h4>Race</h4>
+              <h3>Ethnic groups</h3>
             </div>
             <p>
-              Certain health concerns may affect individuals of some Black and
-              Asian origins at lower BMIs than others. To learn more, it is
-              advised to discuss this with your GP or practice nurse.
+              Some individuals of Black and Asian descent may face health risks at lower BMI levels compared to other
+              groups. If this
+              is a concern for you, it's a good idea to speak with your GP or practice nurse for more information.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Habits -->
+      <section class="positive-habits">
+        <div>
+          <h2>Keys to a Healthy Lifestyle</h2>
+          <div>
+            <h3>Healthy diet</h3>
+            <p>
+              Healthy eating isn't just about managing your weight; it's a cornerstone of overall well-being.
+              It helps prevent diseases, improves digestion, strengthens your immune system, and even boosts
+              your mental clarity and mood.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h3>Frequent workouts</h3>
+            <p>
+              Routine exercise is a powerful tool for your health. It not only boosts your fitness and helps
+              with weight management, but also significantly improves your mood and lowers your risk of disease,
+              ultimately contributing to greater wellness and a longer life.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <h3>Adequate sleep</h3>
+            <p>
+              Getting enough sleep is fundamental for your well-being. It sharpens your mental clarity, stabilizes
+              your emotions, and bolsters your physical health, leading to complete restoration and rejuvenation
+              for your body and mind.
             </p>
           </div>
         </div>
@@ -231,14 +278,14 @@
   </div>
   <footer>
     <center><small>
-        <p>&copy;
+        <p>©
           <script>document.write(new Date().getFullYear())</script>Developed by Thanh Phong
         </p>
       </small>
     </center>
   </footer>
   <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
