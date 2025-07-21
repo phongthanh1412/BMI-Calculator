@@ -61,7 +61,7 @@ function classifyBMI(bmi) {
   if (bmi < 18.5) {
     category = 'Underweight';
   } else if (bmi >= 18.5 && bmi <= 24.9) {
-    category = 'Healthy weight';
+    category = 'Healthy Weight';
   } else if (bmi > 24.9 && bmi <= 29.9) {
     category = 'Overweight';
   } else {

@@ -2,326 +2,297 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles2.css">
   <title>BMI Estimator</title>
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="container">
-        <div class="content">
-          <div class="logo"><img src="./assets/images/logo.svg" alt="" /></div>
-          <h1>BMI Calculator</h1>
-          <p>
-            BMI (body mass index) is a tool for adults that helps determine if your weight falls into
-            the underweight, healthy, or overweight categories relative to your height. Essentially, the BMI calculation
-            provides a quick snapshot of how your weight compares to typical values. It's calculated by taking your
-            weight
-            in kilograms and dividing it by the square of your height in meters BMI = weight/height<sup>2</sup>.
-            This simple formula gives you an idea of whether your weight is generally in a healthy range for your
-            height.
-          </p>
-        </div>
-        <div class="calculator">
-          <div class="form" id="form">
-            <h3>Calculate your BMI</h3>
-            <label for="units">Units</label>
-            <div class="units">
-              <div class="form-control">
-                <input type="radio" name="input" value="metric" id="metric" class="radio active" checked />
-                <label for="metric">Metric</label>
-              </div>
-              <div class="form-control">
-                <input type="radio" name="input" value="imperial" id="imperial" class="radio" />
-                <label for="imperial">Imperial</label>
-              </div>
-            </div>
-            <div class="infos">
-              <div class="metric">
-                <div class="form-control">
-                  <label for="height">Height</label>
-                  <div class="input-container">
-                    <input type="number" id="height" placeholder="0" />
-                    <span class="unit-height" id="unit-height">centimetres</span>
-                  </div>
-                </div>
-                <div class="form-control">
-                  <label for="weight">Weight</label>
-                  <div class="input-container">
-                    <input type="number" id="weight" placeholder="0" />
-                    <span class="unit-weight" id="unit-weight">kilograms</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="imperial">
-                <div class="form-control">
-                  <label for="height">Height</label>
-                  <div class="container-flex">
-                    <div class="input-container">
-                      <input type="number" id="feet" class="feet" placeholder="0">
-                      <small>feets</small>
-                    </div>
-                    <div class="input-container">
-                      <input type="number" id="inch" class="inch" placeholder="0">
-                      <small>inches</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-control">
-                  <label for="weight">Weight</label>
-                  <div class="container-flex">
-                    <div class="input-container">
-                      <input type="number" id="st" class="st" placeholder="0">
-                      <small>stones</small>
-                    </div>
-                    <div class="input-container">
-                      <input type="number" id="lbs" class="lbs" placeholder="0">
-                      <small>pounds</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="button-group">
-              <button id="calculateBtn">Calculate</button>
-              <button id="resetBtn">Reset</button>
-            </div>
-          </div>
-        </div>
-        <div class="container-result" id="container-result">
-          <div class="bmi" id="bmi">
-            <div class="result-heading">
-              <p>Result</p>
-              <div class="result" id="result"></div>
-            </div>
-            <div class="result-text">
-              <p>You are in the <span id="classification"></span> range </p>
-            </div>
-          </div>
-          <div class="valid-msg" id="valid-msg">
-            <p>No result calculated. Please enter your height and weight.</p>
-          </div>
-        </div>
-        <div class="bmi-table">
-          <h2>Health risk classification</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Classification</th>
-                <th>BMI category (kg/m²)</th>
-                <th>Risk of developing health problems</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Underweight</td>
-                <td>&lt;18.5</td>
-                <td>Increased</td>
-              </tr>
-              <tr>
-                <td>Normal</td>
-                <td>18.5 - 24.9</td>
-                <td>Least</td>
-              </tr>
-              <tr>
-                <td>Overweight</td>
-                <td>25.0 - 29.9</td>
-                <td>Increased</td>
-              </tr>
-              <tr>
-                <td>Obese class I</td>
-                <td>30.0 - 34.9</td>
-                <td>High</td>
-              </tr>
-              <tr>
-                <td>Obese class II</td>
-                <td>35.0 - 39.9</td>
-                <td>Very high</td>
-              </tr>
-              <tr>
-                <td>Obese class III</td>
-                <td>&GreaterEqual;40.0</td>
-                <td>Extremely high</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </header>
-    <main>
-      <!-- Section explanation -->
-      <section class="explanation">
-        <div class="image">
-        </div>
-        <div class="content">
-          <h2>What your BMI result means</h2>
-          <section class="Underweight">
-            <h3>Underweight</h3>
-            <p>
-              Being underweight can lead to a deficiency in essential nutrients, impacting your skin, hair,
-              and teeth, and causing fatigue. Women, in particular, might experience irregular menstrual cycles
-              and an increased risk of osteoporosis. It's recommended to consult your doctor to understand the
-              cause of your low BMI and to develop a healthy weight gain plan.
-            </p>
-          </section>
-          <section class="Healthy-weight">
-            <h3>Healthy weight</h3>
-            <p>
-              While a healthy BMI suggests you're at an appropriate weight for your height, it does not offer
-              a complete picture of your body's composition, like your muscle-to-fat ratio, activity levels,
-              or body type. Therefore, it's essential to monitor your overall health, diet, exercise habits,
-              and any weight fluctuations.
-            </p>
-          </section>
-          <section class="overweight">
-            <h3>Overweight</h3>
-            <p>
-              Having a BMI in the overweight range can significantly increase your risk of developing several
-              serious health conditions. You might be more susceptible to chronic diseases like type 2 diabetes,
-              which affects how your body processes sugar, and heart disease, a broad term for conditions that
-              affect your heart and blood vessels. Additionally, being overweight can elevate your chances of
-              developing gallstones, hardened deposits in your gallbladder, and even certain types of cancer.
-            </p>
-          </section>
-          <section class="obesity">
-            <h3>Obesity</h3>
-            <p>
-              A BMI of 30 or higher signals obesity, significantly raising your risk for serious health issues.
-              This includes a much higher chance of developing heart disease, type 2 diabetes, and certain
-              cancers.
-              It's crucial to discuss these risks with your doctor to find ways to manage your weight and improve
-              your health.
-            </p>
-          </section>
-        </div>
-      </section>
-
-      <!-- Section Limitations -->
-      <section class="limitations">
-        <div class="limitations-content">
-          <h2>Specific cases where BMI may not apply</h2>
-          <p>
-            While BMI is generally a useful way to gauge a healthy weight, it's not a perfect fit for everyone.
-            Certain individuals should view their BMI results with caution, and for some, the measurement might
-            not be helpful at all.
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card children">
-            <div class="card-heading">
-              <h3>Children</h3>
-            </div>
-            <p>
-              For children and young people aged 2 to 18, BMI calculation differs significantly from adults. This
-              is because children are still growing, and boys and girls develop at varying rates. A specialized
-              children's
-              BMI calculator takes into account age, children, height, and weight. The result is presented as a
-              "centile"
-              number. This centile indicates how a child's BMI compares to other children of the same age and children.
-              For example, if a boy is on the 60th centile, it means he is heavier than 60 out of 100 other boys his
-              age.
-            </p>
-          </div>
-          <div class="card age">
-            <div class="card-heading">
-              <h3>Old people</h3>
-            </div>
-            <p>
-              As we age, our bodies naturally undergo changes, including an increase in fat mass and a decrease in
-              muscle
-              mass. Because of this shift in body composition, the BMI (Body Mass Index), which primarily considers
-              weight
-              and height, may not be a truly reliable indicator of health or body fat for individuals over 60. It's
-              important
-              to remember that for older adults, other factors beyond just BMI might offer a clearer picture of their
-              overall
-              health and well-being.
-            </p>
-          </div>
-          <div class="card muscle">
-            <div class="card-heading">
-              <h3>Muscular people</h3>
-            </div>
-            <p>
-              BMI can be misleading for very muscular individuals, like weight trainers and athletes. Since muscle
-              weighs more
-              than fat, highly muscled people might register as obese on the BMI scale even when they are, in fact, at a
-              healthy
-              weight for their body composition.
-            </p>
-          </div>
-          <div class="card pregnancy">
-            <div class="card-heading">
-              <h3>Pregnant women</h3>
-            </div>
-            <p>
-              When pregnant, it's natural to gain weight due to your growing baby and the surrounding amniotic fluid.
-              This makes
-              it challenging to pinpoint your "true" pre-pregnancy weight. If you have concerns about your weight during
-              pregnancy
-              , it's best to consult your midwife or GP.
-            </p>
-          </div>
-          <div class="card race">
-            <div class="card-heading">
-              <h3>Ethnic groups</h3>
-            </div>
-            <p>
-              Some individuals of Black and Asian descent may face health risks at lower BMI levels compared to other
-              groups. If this
-              is a concern for you, it's a good idea to speak with your GP or practice nurse for more information.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Habits -->
-      <section class="positive-habits">
-        <div>
-          <h2>Keys to a Healthy Lifestyle</h2>
-          <div>
-            <h3>Healthy diet</h3>
-            <p>
-              Healthy eating isn't just about managing your weight; it's a cornerstone of overall well-being.
-              It helps prevent diseases, improves digestion, strengthens your immune system, and even boosts
-              your mental clarity and mood.
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h3>Frequent workouts</h3>
-            <p>
-              Routine exercise is a powerful tool for your health. It not only boosts your fitness and helps
-              with weight management, but also significantly improves your mood and lowers your risk of disease,
-              ultimately contributing to greater wellness and a longer life.
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <h3>Adequate sleep</h3>
-            <p>
-              Getting enough sleep is fundamental for your well-being. It sharpens your mental clarity, stabilizes
-              your emotions, and bolsters your physical health, leading to complete restoration and rejuvenation
-              for your body and mind.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-  <footer>
-    <center><small>
-        <p>©
-          <script>document.write(new Date().getFullYear())</script>Developed by Thanh Phong
+  <header class="header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="nav-tabs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <!-- <div class="logo">
+          <img src="./assets/images/logo.png" alt="BMI Calculator Logo" width="40" height="40">
+        </div> -->
+        <h1>BMI Calculator</h1>
+        <p>
+          BMI (body mass index) is a tool for adults that helps determine if your weight falls into
+          the underweight, healthy, or overweight categories relative to your height. Essentially, the BMI calculation
+          provides a quick snapshot of how your weight compares to typical values. It's calculated by taking your
+          weight in kilograms and dividing it by the square of your height in meters BMI = weight/height<sup>2</sup>.
+          This simple formula gives you an idea of whether your weight is generally in a healthy range for your
+          height.
         </p>
-      </small>
-    </center>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="calculator" aria-labelledby="calculator-heading">
+      <h2 id="calculator-heading">Calculate your BMI</h2>
+      <form class="form" id="form">
+        <fieldset class="units">
+          <legend>Units</legend>
+          <div class="form-control">
+            <input type="radio" name="input" value="metric" id="metric" class="radio active" checked>
+            <label for="metric">Metric</label>
+          </div>
+          <div class="form-control">
+            <input type="radio" name="input" value="imperial" id="imperial" class="radio">
+            <label for="imperial">Imperial</label>
+          </div>
+        </fieldset>
+        <div class="infos">
+          <div class="metric">
+            <div class="form-control">
+              <label for="height">Height</label>
+              <div class="input-container">
+                <input type="number" id="height" placeholder="0" aria-describedby="unit-height">
+                <span class="unit-height" id="unit-height">centimetres</span>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="weight">Weight</label>
+              <div class="input-container">
+                <input type="number" id="weight" placeholder="0" aria-describedby="unit-weight">
+                <span class="unit-weight" id="unit-weight">kilograms</span>
+              </div>
+            </div>
+          </div>
+          <div class="imperial">
+            <div class="form-control">
+              <label for="height">Height</label>
+              <div class="container-flex">
+                <div class="input-container">
+                  <input type="number" id="feet" class="feet" placeholder="0" aria-describedby="feet-unit">
+                  <small id="feet-unit">feets</small>
+                </div>
+                <div class="input-container">
+                  <input type="number" id="inch" class="inch" placeholder="0" aria-describedby="inch-unit">
+                  <small id="inch-unit">inches</small>
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <label for="weight">Weight</label>
+              <div class="container-flex">
+                <div class="input-container">
+                  <input type="number" id="st" class="st" placeholder="0" aria-describedby="st-unit">
+                  <small id="st-unit">stones</small>
+                </div>
+                <div class="input-container">
+                  <input type="number" id="lbs" class="lbs" placeholder="0" aria-describedby="lbs-unit">
+                  <small id="lbs-unit">pounds</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="button" id="calculateBtn">Calculate</button>
+          <button type="button" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </section>
+    <section class="container-result" id="container-result" aria-live="polite">
+      <div class="bmi" id="bmi">
+        <div class="result-heading">
+          <p>Result</p>
+          <div class="result" id="result"></div>
+        </div>
+        <div class="result-text">
+          <p>You are in the <span id="classification"></span> range </p>
+        </div>
+      </div>
+      <div class="valid-msg" id="valid-msg">
+        <p>No result calculated. Please enter your height and weight.</p>
+      </div>
+    </section>
+    <section class="bmi-table">
+      <h2>Health risk classification</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Classification</th>
+            <th scope="col">BMI category (kg/m²)</th>
+            <th scope="col">Risk of developing health problems</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Underweight</td>
+            <td>&lt;18.5</td>
+            <td>Increased</td>
+          </tr>
+          <tr>
+            <td>Healthy weight</td>
+            <td>18.5 - 24.9</td>
+            <td>Least</td>
+          </tr>
+          <tr>
+            <td>Overweight</td>
+            <td>25.0 - 29.9</td>
+            <td>Increased</td>
+          </tr>
+          <tr>
+            <td>Obese class I</td>
+            <td>30.0 - 34.9</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Obese class II</td>
+            <td>35.0 - 39.9</td>
+            <td>Very high</td>
+          </tr>
+          <tr>
+            <td>Obese class III</td>
+            <td>≥40.0</td>
+            <td>Extremely high</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="explanation">
+      <h2>What your BMI result means</h2>
+      <article class="Underweight">
+        <h3>Underweight</h3>
+        <p>
+          Being underweight can lead to a deficiency in essential nutrients, impacting your skin, hair,
+          and teeth, and causing fatigue. Women, in particular, might experience irregular menstrual cycles
+          and an increased risk of osteoporosis. It's recommended to consult your doctor to understand the
+          cause of your low BMI and to develop a healthy weight gain plan.
+        </p>
+      </article>
+      <article class="Healthy-weight">
+        <h3>Healthy weight</h3>
+        <p>
+          While a healthy BMI suggests you're at an appropriate weight for your height, it does not offer
+          a complete picture of your body's composition, like your muscle-to-fat ratio, activity levels,
+          or body type. Therefore, it's essential to monitor your overall health, diet, exercise habits,
+          and any weight fluctuations.
+        </p>
+      </article>
+      <article class="overweight">
+        <h3>Overweight</h3>
+        <p>
+          Having a BMI in the overweight range can significantly increase your risk of developing several
+          serious health conditions. You might be more susceptible to chronic diseases like type 2 diabetes,
+          which affects how your body processes sugar, and heart disease, a broad term for conditions that
+          affect your heart and blood vessels. Additionally, being overweight can elevate your chances of
+          developing gallstones, hardened deposits in your gallbladder, and even certain types of cancer.
+        </p>
+      </article>
+      <article class="obesity">
+        <h3>Obesity</h3>
+        <p>
+          A BMI of 30 or higher signals obesity, significantly raising your risk for serious health issues.
+          This includes a much higher chance of developing heart disease, type 2 diabetes, and certain
+          cancers. It's crucial to discuss these risks with your doctor to find ways to manage your weight and improve
+          your health.
+        </p>
+      </article>
+    </section>
+    <section class="limitations">
+      <h2>Specific cases where BMI may not apply</h2>
+      <p>
+        While BMI is generally a useful way to gauge a healthy weight, it's not a perfect fit for everyone.
+        Certain individuals should view their BMI results with caution, and for some, the measurement might
+        not be helpful at all.
+      </p>
+      <div class="cards">
+        <article class="card children">
+          <h3>Children</h3>
+          <p>
+            For children and young people aged 2 to 18, BMI calculation differs significantly from adults. This
+            is because children are still growing, and boys and girls develop at varying rates. A specialized
+            children's BMI calculator takes into account age, children, height, and weight. The result is presented as a
+            "centile" number. This centile indicates how a child's BMI compares to other children of the same age and
+            children.
+            For example, if a boy is on the 60th centile, it means he is heavier than 60 out of 100 other boys his
+            age.
+          </p>
+        </article>
+        <article class="card age">
+          <h3>Old people</h3>
+          <p>
+            As we age, our bodies naturally undergo changes, including an increase in fat mass and a decrease in
+            muscle mass. Because of this shift in body composition, the BMI (Body Mass Index), which primarily considers
+            weight and height, may not be a truly reliable indicator of health or body fat for individuals over 60. It's
+            important to remember that for older adults, other factors beyond just BMI might offer a clearer picture of
+            their
+            overall health and well-being.
+          </p>
+        </article>
+        <article class="card muscle">
+          <h3>Muscular people</h3>
+          <p>
+            BMI can be misleading for very muscular individuals, like weight trainers and athletes. Since muscle
+            weighs more than fat, highly muscled people might register as obese on the BMI scale even when they are, in
+            fact, at a
+            healthy weight for their body composition.
+          </p>
+        </article>
+        <article class="card pregnancy">
+          <h3>Pregnant women</h3>
+          <p>
+            When pregnant, it's natural to gain weight due to your growing baby and the surrounding amniotic fluid.
+            This makes it challenging to pinpoint your "true" pre-pregnancy weight. If you have concerns about your
+            weight during
+            pregnancy, it's best to consult your midwife or GP.
+          </p>
+        </article>
+        <article class="card race">
+          <h3>Ethnic groups</h3>
+          <p>
+            Some individuals of Black and Asian descent may face health risks at lower BMI levels compared to other
+            groups. If this is a concern for you, it's a good idea to speak with your GP or practice nurse for more
+            information.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section class="positive-habits">
+      <h2>Keys to a Healthy Lifestyle</h2>
+      <article>
+        <h3>Healthy diet</h3>
+        <p>
+          Healthy eating isn't just about managing your weight; it's a cornerstone of overall well-being.
+          It helps prevent diseases, improves digestion, strengthens your immune system, and even boosts
+          your mental clarity and mood.
+        </p>
+      </article>
+      <article>
+        <h3>Frequent workouts</h3>
+        <p>
+          Routine exercise is a powerful tool for your health. It not only boosts your fitness and helps
+          with weight management, but also significantly improves your mood and lowers your risk of disease,
+          ultimately contributing to greater wellness and a longer life.
+        </p>
+      </article>
+      <article>
+        <h3>Adequate sleep</h3>
+        <p>
+          Getting enough sleep is fundamental for your well-being. It sharpens your mental clarity, stabilizes
+          your emotions, and bolsters your physical health, leading to complete restoration and rejuvenation
+          for your body and mind.
+        </p>
+      </article>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>
+      <script>document.write(new Date().getFullYear())</script> Developed by Thanh Phong
+    </p>
   </footer>
   <script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
