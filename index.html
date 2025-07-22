@@ -39,6 +39,49 @@
   </header>
   <main class="container">
     <section class="calculator-and-table" aria-labelledby="calculator-heading">
+      <div class="bmi-table">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Classification</th>
+              <th scope="col">BMI category (kg/m²)</th>
+              <th scope="col">Risk of developing health problems</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Underweight</td>
+              <td>&lt;18.5</td>
+              <td>Increased</td>
+            </tr>
+            <tr>
+              <td>Healthy weight</td>
+              <td>18.5 - 24.9</td>
+              <td>Least</td>
+            </tr>
+            <tr>
+              <td>Overweight</td>
+              <td>25.0 - 29.9</td>
+              <td>Increased</td>
+            </tr>
+            <tr>
+              <td>Obese class I</td>
+              <td>30.0 - 34.9</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Obese class II</td>
+              <td>35.0 - 39.9</td>
+              <td>Very high</td>
+            </tr>
+            <tr>
+              <td>Obese class III</td>
+              <td>≥40.0</td>
+              <td>Extremely high</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="calculator" aria-labelledby="calculator-heading">
         <h2 id="calculator-heading">Calculate your BMI</h2>
         <form class="form" id="form">
@@ -105,49 +148,7 @@
           </div>
         </form>
       </div>
-      <div class="bmi-table">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Classification</th>
-              <th scope="col">BMI category (kg/m²)</th>
-              <th scope="col">Risk of developing health problems</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Underweight</td>
-              <td><18.5</td>
-              <td>Increased</td>
-            </tr>
-            <tr>
-              <td>Healthy weight</td>
-              <td>18.5 - 24.9</td>
-              <td>Least</td>
-            </tr>
-            <tr>
-              <td>Overweight</td>
-              <td>25.0 - 29.9</td>
-              <td>Increased</td>
-            </tr>
-            <tr>
-              <td>Obese class I</td>
-              <td>30.0 - 34.9</td>
-              <td>High</td>
-            </tr>
-            <tr>
-              <td>Obese class II</td>
-              <td>35.0 - 39.9</td>
-              <td>Very high</td>
-            </tr>
-            <tr>
-              <td>Obese class III</td>
-              <td>≥40.0</td>
-              <td>Extremely high</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
     </section>
     <section class="container-result" id="container-result" aria-live="polite">
       <div class="bmi" id="bmi">
