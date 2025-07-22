@@ -38,71 +38,116 @@
     </div>
   </header>
   <main class="container">
-    <section class="calculator" aria-labelledby="calculator-heading">
-      <h2 id="calculator-heading">Calculate your BMI</h2>
-      <form class="form" id="form">
-        <fieldset class="units">
-          <legend>Units</legend>
-          <div class="form-control">
-            <input type="radio" name="input" value="metric" id="metric" class="radio active" checked>
-            <label for="metric">Metric</label>
-          </div>
-          <div class="form-control">
-            <input type="radio" name="input" value="imperial" id="imperial" class="radio">
-            <label for="imperial">Imperial</label>
-          </div>
-        </fieldset>
-        <div class="infos">
-          <div class="metric">
+    <section class="calculator-and-table" aria-labelledby="calculator-heading">
+      <div class="calculator" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Calculate your BMI</h2>
+        <form class="form" id="form">
+          <fieldset class="units">
+            <legend>Units</legend>
             <div class="form-control">
-              <label for="height">Height</label>
-              <div class="input-container">
-                <input type="number" id="height" placeholder="0" aria-describedby="unit-height">
-                <span class="unit-height" id="unit-height">centimetres</span>
-              </div>
+              <input type="radio" name="input" value="metric" id="metric" class="radio active" checked>
+              <label for="metric">Metric</label>
             </div>
             <div class="form-control">
-              <label for="weight">Weight</label>
-              <div class="input-container">
-                <input type="number" id="weight" placeholder="0" aria-describedby="unit-weight">
-                <span class="unit-weight" id="unit-weight">kilograms</span>
-              </div>
+              <input type="radio" name="input" value="imperial" id="imperial" class="radio">
+              <label for="imperial">Imperial</label>
             </div>
-          </div>
-          <div class="imperial">
-            <div class="form-control">
-              <label for="height">Height</label>
-              <div class="container-flex">
+          </fieldset>
+          <div class="infos">
+            <div class="metric">
+              <div class="form-control">
+                <label for="height">Height</label>
                 <div class="input-container">
-                  <input type="number" id="feet" class="feet" placeholder="0" aria-describedby="feet-unit">
-                  <small id="feet-unit">feets</small>
+                  <input type="number" id="height" placeholder="0" aria-describedby="unit-height">
+                  <span class="unit-height" id="unit-height">centimetres</span>
                 </div>
+              </div>
+              <div class="form-control">
+                <label for="weight">Weight</label>
                 <div class="input-container">
-                  <input type="number" id="inch" class="inch" placeholder="0" aria-describedby="inch-unit">
-                  <small id="inch-unit">inches</small>
+                  <input type="number" id="weight" placeholder="0" aria-describedby="unit-weight">
+                  <span class="unit-weight" id="unit-weight">kilograms</span>
                 </div>
               </div>
             </div>
-            <div class="form-control">
-              <label for="weight">Weight</label>
-              <div class="container-flex">
-                <div class="input-container">
-                  <input type="number" id="st" class="st" placeholder="0" aria-describedby="st-unit">
-                  <small id="st-unit">stones</small>
+            <div class="imperial">
+              <div class="form-control">
+                <label for="height">Height</label>
+                <div class="container-flex">
+                  <div class="input-container">
+                    <input type="number" id="feet" class="feet" placeholder="0" aria-describedby="feet-unit">
+                    <small id="feet-unit">feets</small>
+                  </div>
+                  <div class="input-container">
+                    <input type="number" id="inch" class="inch" placeholder="0" aria-describedby="inch-unit">
+                    <small id="inch-unit">inches</small>
+                  </div>
                 </div>
-                <div class="input-container">
-                  <input type="number" id="lbs" class="lbs" placeholder="0" aria-describedby="lbs-unit">
-                  <small id="lbs-unit">pounds</small>
+              </div>
+              <div class="form-control">
+                <label for="weight">Weight</label>
+                <div class="container-flex">
+                  <div class="input-container">
+                    <input type="number" id="st" class="st" placeholder="0" aria-describedby="st-unit">
+                    <small id="st-unit">stones</small>
+                  </div>
+                  <div class="input-container">
+                    <input type="number" id="lbs" class="lbs" placeholder="0" aria-describedby="lbs-unit">
+                    <small id="lbs-unit">pounds</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="button-group">
-          <button type="button" id="calculateBtn">Calculate</button>
-          <button type="button" id="resetBtn">Reset</button>
-        </div>
-      </form>
+          <div class="button-group">
+            <button type="button" id="calculateBtn">Calculate</button>
+            <button type="button" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div class="bmi-table">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Classification</th>
+              <th scope="col">BMI category (kg/m²)</th>
+              <th scope="col">Risk of developing health problems</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Underweight</td>
+              <td><18.5</td>
+              <td>Increased</td>
+            </tr>
+            <tr>
+              <td>Healthy weight</td>
+              <td>18.5 - 24.9</td>
+              <td>Least</td>
+            </tr>
+            <tr>
+              <td>Overweight</td>
+              <td>25.0 - 29.9</td>
+              <td>Increased</td>
+            </tr>
+            <tr>
+              <td>Obese class I</td>
+              <td>30.0 - 34.9</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Obese class II</td>
+              <td>35.0 - 39.9</td>
+              <td>Very high</td>
+            </tr>
+            <tr>
+              <td>Obese class III</td>
+              <td>≥40.0</td>
+              <td>Extremely high</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section class="container-result" id="container-result" aria-live="polite">
       <div class="bmi" id="bmi">
@@ -117,50 +162,6 @@
       <div class="valid-msg" id="valid-msg">
         <p>No result calculated. Please enter your height and weight.</p>
       </div>
-    </section>
-    <section class="bmi-table">
-      <h2>Health risk classification</h2>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Classification</th>
-            <th scope="col">BMI category (kg/m²)</th>
-            <th scope="col">Risk of developing health problems</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Underweight</td>
-            <td>&lt;18.5</td>
-            <td>Increased</td>
-          </tr>
-          <tr>
-            <td>Healthy weight</td>
-            <td>18.5 - 24.9</td>
-            <td>Least</td>
-          </tr>
-          <tr>
-            <td>Overweight</td>
-            <td>25.0 - 29.9</td>
-            <td>Increased</td>
-          </tr>
-          <tr>
-            <td>Obese class I</td>
-            <td>30.0 - 34.9</td>
-            <td>High</td>
-          </tr>
-          <tr>
-            <td>Obese class II</td>
-            <td>35.0 - 39.9</td>
-            <td>Very high</td>
-          </tr>
-          <tr>
-            <td>Obese class III</td>
-            <td>≥40.0</td>
-            <td>Extremely high</td>
-          </tr>
-        </tbody>
-      </table>
     </section>
     <section class="explanation">
       <h2>What your BMI result means</h2>

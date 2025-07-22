@@ -10,6 +10,7 @@ const bmiResultValue = document.getElementById('result');
 const bmiResultContainer = document.getElementById('container-result');
 const bmiBlock = document.getElementById('bmi');
 const validationMessage = document.getElementById('valid-msg');
+const bmiTable = document.querySelector('.bmi-table table tbody'); 
 
 const btnMetric = document.getElementById('metric');
 const btnImperial = document.getElementById('imperial');
@@ -62,13 +63,37 @@ function classifyBMI(bmi) {
     category = 'Underweight';
   } else if (bmi >= 18.5 && bmi <= 24.9) {
     category = 'Healthy Weight';
-  } else if (bmi > 24.9 && bmi <= 29.9) {
+  } else if (bmi >= 25.0 && bmi <= 29.9) {
     category = 'Overweight';
+  } else if (bmi >= 30.0 && bmi <= 34.9) {
+    category = 'Obese Class I';
+  } else if (bmi >= 35.0 && bmi <= 39.9) {
+    category = 'Obese Class II';
   } else {
-    category = 'Obese';
+    category = 'Obese Class III';
   }
   classificationLabel.innerText = category;
+
+  // Highlight the matching table row
+  highlightTableRow(category);
   console.log('Classification:', category);
+}
+
+function highlightTableRow(category) {
+  // Remove existing highlight from all rows
+  const rows = bmiTable.getElementsByTagName('tr');
+  for (let row of rows) {
+    row.classList.remove('highlighted');
+  }
+
+  // Find and highlight the row matching the category (case-insensitive)
+  for (let row of rows) {
+    const cell = row.getElementsByTagName('td')[0]; 
+    if (cell && cell.textContent.trim().toLowerCase() === category.toLowerCase()) {
+      row.classList.add('highlighted');
+      break; 
+    }
+  }
 }
 
 function resetForm() {
@@ -83,6 +108,12 @@ function resetForm() {
   bmiBlock.style.display = 'none';
   validationMessage.style.display = 'block';
   updateButtonState();
+
+  // Remove highlight from table when resetting
+  const rows = bmiTable.getElementsByTagName('tr');
+  for (let row of rows) {
+    row.classList.remove('highlighted');
+  }
 }
 
 function limitLength() {
