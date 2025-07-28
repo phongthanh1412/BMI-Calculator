@@ -10,7 +10,7 @@ const bmiResultValue = document.getElementById('result');
 const bmiResultContainer = document.getElementById('container-result');
 const bmiBlock = document.getElementById('bmi');
 const validationMessage = document.getElementById('valid-msg');
-const bmiTable = document.querySelector('.bmi-table table tbody'); 
+const bmiTable = document.querySelector('.bmi-table table tbody');
 
 const btnMetric = document.getElementById('metric');
 const btnImperial = document.getElementById('imperial');
@@ -88,10 +88,10 @@ function highlightTableRow(category) {
 
   // Find and highlight the row matching the category (case-insensitive)
   for (let row of rows) {
-    const cell = row.getElementsByTagName('td')[0]; 
+    const cell = row.getElementsByTagName('td')[0];
     if (cell && cell.textContent.trim().toLowerCase() === category.toLowerCase()) {
       row.classList.add('highlighted');
-      break; 
+      break;
     }
   }
 }
@@ -233,6 +233,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('resize', () => {
-  const metricDisplay = window.innerWidth < 768 ? 'block' : 'flex';
-  document.querySelector('.metric').style.display = metricDisplay;
+  const metricForm = document.querySelector('.metric');
+  const imperialForm = document.querySelector('.imperial');
+  const isMetricActive = btnMetric.classList.contains('active');
+
+  if (isMetricActive) {
+    metricForm.style.display = window.innerWidth < 768 ? 'block' : 'flex';
+    imperialForm.style.display = 'none';
+  } else {
+    metricForm.style.display = 'none';
+    imperialForm.style.display = 'block';
+  }
+  resetForm();
 });

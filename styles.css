@@ -68,10 +68,8 @@ h1 {
   text-align: left;
   width: 100%;
   padding: 32px 50px;
-  margin: 0;
 }
 
-/* Secondary Headings */
 h2 {
   color: #07111f;
   letter-spacing: -1.6px;
@@ -80,8 +78,7 @@ h2 {
   line-height: 1.1;
   text-align: left;
   width: 70%;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin: 24px 0;
 }
 
 h3 {
@@ -127,6 +124,7 @@ input[type='number']::-webkit-outer-spin-button {
   padding: 0;
   text-align: center;
   position: relative;
+  max-width: 1366px;
 }
 
 .header .logo {
@@ -140,10 +138,9 @@ input[type='number']::-webkit-outer-spin-button {
   font-size: 17px;
   line-height: 1.5;
   text-align: left;
-  width: 70%;
-  padding-left: 24px;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  /* width: 70%; */
+  padding-left: 50px;
+  margin: 32px 0;
 }
 
 /* BMI Display Styles */
@@ -160,6 +157,7 @@ input[type='number']::-webkit-outer-spin-button {
   border-radius: 16px 16px 0 0;
   text-align: left;
   width: 70%;
+  margin: 0 auto;
 }
 
 /* Units Form Control Styles */
@@ -284,7 +282,7 @@ button:disabled {
 
 /* Units Form Control Styles */
 fieldset {
-  border: none; 
+  border: none;
 }
 
 fieldset legend {
@@ -331,7 +329,8 @@ fieldset legend {
   font-weight: 600;
 }
 
-.form .unit-height, .form .unit-weight {
+.form .unit-height,
+.form .unit-weight {
   color: #5e6e85;
   opacity: 0.5;
   font-weight: 600;
@@ -407,6 +406,7 @@ fieldset legend {
   color: #fff;
   border-radius: 0 0 16px 16px;
   width: 70%;
+  margin: 0 auto;
 }
 
 .container-result .bmi {
@@ -448,8 +448,11 @@ fieldset legend {
 
 /* BMI Table Styles */
 .bmi-table {
-  margin-top: 90px;
+  margin-top: 60px;
+  margin-bottom: 50px;
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bmi-table table {
@@ -460,7 +463,8 @@ fieldset legend {
   overflow: hidden;
 }
 
-.bmi-table th, .bmi-table td {
+.bmi-table th,
+.bmi-table td {
   padding: 12px 16px 25px 25px;
   text-align: left;
   border-bottom: 1px solid #d8e2e7;
@@ -481,8 +485,15 @@ fieldset legend {
   border-bottom: none;
 }
 
+.bmi-table tr.highlighted {
+  background-color: #b0e0e6;
+  transition: background-color 0.3s ease;
+}
+
 /* Explanation, Limitations, and Positive Habits Section Styles */
-.explanation, .limitations, .positive-habits {
+.explanation,
+.limitations,
+.positive-habits {
   padding: 20px 20px;
   display: flex;
   flex-direction: column;
@@ -491,12 +502,16 @@ fieldset legend {
   width: 70%;
 }
 
-.explanation h3, .limitations h3, .positive-habits h3 {
+.explanation h3,
+.limitations h3,
+.positive-habits h3 {
   margin: 24px 0;
   font-weight: 600;
 }
 
-.explanation p, .limitations p, .positive-habits p {
+.explanation p,
+.limitations p,
+.positive-habits p {
   color: #444343;
   font-size: 17px;
 }
@@ -509,7 +524,6 @@ fieldset legend {
 
 /* Media Queries for Tablets (min-width: 768px) */
 @media (min-width: 768px) {
-  
   .container {
     max-width: 1000px;
   }
@@ -580,7 +594,82 @@ fieldset legend {
   }
 }
 
-/* Media Queries for Desktops (min-width: 1440px) */
+/* Media Queries for Desktops (max-width: 1366px) */
+@media (min-width: 768px) and (max-width: 1366px) {
+  body {
+    width: 1366px;
+    margin: 0;
+  }
+
+  .navbar {
+    /* position: auto; */
+    width: 1366px;
+    padding-left: 140px;
+    z-index: 1000;
+  }
+
+  .nav-tabs {
+    gap: 32px;
+    margin: 0 auto;
+    justify-content: left;
+    max-width: 1366px;
+  }
+
+  h1 {
+    width: 100vw;
+    padding: 32px 32px 32px 100px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  h2 {
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1166px;
+  }
+
+  .header {
+    padding: 0;
+    text-align: left;
+  }
+
+  .header .content p {
+    width: 1000px;
+    padding: 0 20px 20px 0;
+  }
+
+  .calculator-and-table {
+    display: flex;
+    gap: 32px;
+  }
+
+  .calculator {
+    box-shadow: none;
+    flex: 1;
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .container-result {
+    padding: 8px;
+    margin-left: 583px;
+    margin-top: 0px;
+    width: 50%;
+  }
+  
+  .bmi-table {
+    margin-top: 80px;
+    flex: 1;
+    height: 300px;
+  }
+}
+
+/* Media Queries for Large Desktops (min-width: 1440px) */
 @media (min-width: 1440px) {
   .container {
     max-width: 1392px;
