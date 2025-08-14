@@ -139,7 +139,6 @@ p {
   font-size: 17px;
   line-height: 1.5;
   text-align: left;
-  /* width: 70%; */
   padding-left: 50px;
   margin: 32px 0;
 }
@@ -366,6 +365,11 @@ fieldset legend {
 }
 
 /* Imperial Form Styles */
+.imperial {
+  display: none;
+  margin-bottom: -1rem;
+}
+
 .imperial .container-flex {
   display: flex;
   gap: 24px;
@@ -402,7 +406,7 @@ fieldset legend {
 
 .container-result .bmi {
   padding: 1rem;
-  display: flex;
+  display: none;
   height: 8rem;
   gap: 2rem;
 }
