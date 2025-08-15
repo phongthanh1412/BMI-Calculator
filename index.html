@@ -21,22 +21,26 @@
     </ul>
   </nav>
 
+  <div class="logo">
+    <i class="bx bxs-calculator"></i>BMI Calculator
+  </div>
+
   <!-- Headline and introduction -->
-  <h1>BMI Calculator</h1>
   <div class="introduction">
     <p>
       BMI (body mass index) is a tool for adults that helps determine if your weight falls into
       the underweight, healthy, or overweight categories relative to your height. Essentially, the BMI calculation
       provides a quick snapshot of how your weight compares to typical values. It's calculated by taking your
-      weight in kilograms and dividing it by the square of your height in meters BMI = weight/height<sup>2</sup>.
+      weight in kilograms and dividing it by the square of your height in meters <strong><span class="math-formula">BMI
+          = weight/height<sup>2</sup></span></strong>.
       This simple formula gives you an idea of whether your weight is generally in a healthy range for your
       height.
     </p>
   </div>
 
   <main>
-    <div class="container">
-      <div class="container2">
+    <div class="form-and-table">
+      <div class="calculator-and-result">
         <!-- Calulator section -->
         <div class="calculator" aria-labelledby="calculator-heading">
           <h2 id="calculator-heading">Calculate your BMI</h2>
@@ -269,15 +273,19 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <p>
-      <script>document.write(new Date().getFullYear())</script> Developed by Thanh Phong
-    </p>
-  </footer>
-
   <script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
+<footer class="site-footer">
+  <nav class="footer-nav">
+    <a href="#">About</a> •
+    <a href="#">Contact</a> •
+    <a href="#">Terms of Service</a> •
+    <a href="#">Privacy Policy</a>
+  </nav>
+  <p> BMI-calculator &copy; 2025. </p>
+</footer>
 
 </html>

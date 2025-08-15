@@ -10,7 +10,7 @@ const bmiResultValue = document.getElementById('result');
 const bmiResultContainer = document.getElementById('container-result');
 const bmiBlock = document.getElementById('bmi');
 const validationMessage = document.getElementById('valid-msg');
-const bmiTable = document.querySelector('.bmi-table table tbody');
+const bmiTable = document.querySelector('.bmi-table');
 
 const btnMetric = document.getElementById('metric');
 const btnImperial = document.getElementById('imperial');
@@ -245,4 +245,17 @@ window.addEventListener('resize', () => {
     imperialForm.style.display = 'block';
   }
   resetForm();
+});
+
+let lastScroll = 0;
+const nav = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll) {
+    nav.style.transform = "translateY(-100%)"; // hide
+  } else {
+    nav.style.transform = "translateY(0)"; // show
+  }
+  lastScroll = currentScroll;
 });

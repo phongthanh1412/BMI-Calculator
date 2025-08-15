@@ -27,13 +27,15 @@ body {
 
 /* Navigation Styles */
 .navbar {
-  background-color: #36305e;
+  background-color: #7e0a0a;
+  box-shadow: 0 0 8px rgba(8, 8, 8, 0.5);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   padding: 20px 50px;
   margin: 0;
+  transition: 400ms ease-in-out;
 }
 
 .nav-tabs {
@@ -53,21 +55,32 @@ body {
   padding: 8px 12px;
 }
 
+.nav-tabs li a i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+}
+
 .nav-tabs li a:hover {
-  background-color: #443c75;
+  background-color: rgb(170, 85, 85);
 }
 
 /* Heading Styles */
-h1 {
+.logo {
   color: #fff9f9;
-  background: rgb(146, 4, 4);
-  letter-spacing: -2.5px;
-  font-size: 48px;
+  background: rgb(168, 78, 78);
+  font-size: 3rem;
   font-weight: 600;
-  line-height: 1.1;
-  text-align: left;
-  width: 100%;
-  padding: 32px 50px;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0 1rem 3rem;
+}
+
+.logo i {
+  font-size: 4rem;          
+  padding: 0.5rem;
+  line-height: 1; 
 }
 
 h2 {
@@ -90,7 +103,7 @@ h3 {
   line-height: normal;
 }
 
-/* Paragraph Styles */
+/* Introduction Styles */
 .introduction p {
   color: #615544;
   background-color: blanchedalmond;
@@ -100,15 +113,34 @@ h3 {
   padding: 1.5rem;
 }
 
-/* Footer Styles */
-.footer {
-  text-align: center;
-  margin-top: 48px;
+.math-formula {
+  font-family: 'Latin Modern Mathh', serif;
+  letter-spacing: 0.5px;
 }
 
-.footer p {
-  font-size: 14px;
-  color: #445061;
+/* Footer */
+.site-footer {
+  background-color: rgba(0, 123, 255, 0.05);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  margin-top: 2em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.site-footer a {
+  font-size: 1em;
+  text-decoration: none;
+  color: rgb(61, 61, 61);
+}
+
+.site-footer p {
+  font-size: 1em;
+  text-align: center;
+}
+
+.site-footer a:hover {
+  color: rgb(167, 165, 165);
 }
 
 /* Input Number (↑↓) Styles */
@@ -119,34 +151,18 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 /* Container Styles */
-.container {
+.form-and-table {
   margin: 0 auto;
   display: flex;
   position: relative;
-  box-shadow: 0 0 8px rgba(15, 66, 252, 0.5);
-
 }
 
-.container2 {
-  box-shadow: 0 0 8px rgba(15, 66, 252, 0.5);
+.calculator-and-result {
   width: 40%;
   margin-left: 4rem;
 }
 
-/* Header Styles */
-.header {
-  padding: 0;
-  text-align: center;
-  position: relative;
-  max-width: 1366px;
-}
-
-.header .logo {
-  width: 40px;
-  margin: 0 auto;
-  padding-top: 16px;
-}
-
+/* Content style */
 p {
   color: #444343;
   font-size: 17px;
@@ -477,7 +493,6 @@ fieldset legend {
 .bmi-table td {
   padding: 12px 0px 25px 25px;
   text-align: left;
-  border-bottom: 1px solid #d8e2e7;
 }
 
 .bmi-table th {
@@ -495,7 +510,7 @@ fieldset legend {
 }
 
 .bmi-table tr.highlighted {
-  background-color: #b0e0e6;
+  background-color: #80cef1;
   transition: background-color 0.3s ease;
 }
 
@@ -525,7 +540,7 @@ fieldset legend {
 .limitations:hover,
 .positive-habits:hover {
   background-color: rgb(247, 234, 218);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transform: scale(1.01);
   transition: 300ms ease-in-out;
 }
