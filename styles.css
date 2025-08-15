@@ -20,15 +20,14 @@
 body {
   margin: 0;
   font-family: 'inter-regular';
-  background-color: #f7f2f2;
+  background-color: beige;
   font-size: 16px;
   transition: 400ms ease-in-out;
-
 }
 
 /* Navigation Styles */
 .navbar {
-  background-color: #2a2549;
+  background-color: #36305e;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -60,8 +59,8 @@ body {
 
 /* Heading Styles */
 h1 {
-  color: #d1cdcd;
-  background: #41393c;
+  color: #fff9f9;
+  background: rgb(146, 4, 4);
   letter-spacing: -2.5px;
   font-size: 48px;
   font-weight: 600;
@@ -74,12 +73,13 @@ h1 {
 h2 {
   color: #07111f;
   letter-spacing: -1.6px;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.1;
   text-align: left;
   margin: 24px 0;
   padding-left: 1rem;
+  padding-right: 0.5rem;
 }
 
 h3 {
@@ -91,9 +91,13 @@ h3 {
 }
 
 /* Paragraph Styles */
-p {
+.introduction p {
   color: #615544;
-  margin: 0;
+  background-color: blanchedalmond;
+  box-shadow: 0 0 8px rgba(8, 8, 8, 0.5);
+  width: 70%;
+  margin: 2rem auto;
+  padding: 1.5rem;
 }
 
 /* Footer Styles */
@@ -116,8 +120,17 @@ input[type='number']::-webkit-outer-spin-button {
 
 /* Container Styles */
 .container {
-  max-width: 686px;
   margin: 0 auto;
+  display: flex;
+  position: relative;
+  box-shadow: 0 0 8px rgba(15, 66, 252, 0.5);
+
+}
+
+.container2 {
+  box-shadow: 0 0 8px rgba(15, 66, 252, 0.5);
+  width: 40%;
+  margin-left: 4rem;
 }
 
 /* Header Styles */
@@ -156,7 +169,7 @@ p {
   padding: 16px;
   border-radius: 16px 16px 0 0;
   text-align: left;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -357,6 +370,11 @@ fieldset legend {
 }
 
 /* Metric Form Styles */
+
+.infos .metric {
+  display: flex;
+}
+
 .form .metric .form-control label {
   display: block;
   margin-bottom: 8px;
@@ -400,7 +418,7 @@ fieldset legend {
   padding: 0.5rem;
   color: #fff;
   border-radius: 0 0 16px 16px;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -447,8 +465,8 @@ fieldset legend {
 
 /* BMI Table Styles */
 .bmi-table {
-  margin: 3em auto 3em auto;
-  width: 70%;
+  margin: auto;
+  width: 40%;
   border-collapse: collapse;
   background: #d7edf7;
   border: 1px solid #07111f;
@@ -463,18 +481,17 @@ fieldset legend {
 }
 
 .bmi-table th {
-  background-color: #304055;
+  background-color: #485d79;
   color: #fff;
   font-weight: 600;
 }
 
 .bmi-table td {
-  color: #444343;
-  text-align: left;
+  color: black;
 }
 
 .bmi-table tr:last-child td {
-  border-bottom: none;
+  border-bottom: 1px solid #07111f;
 }
 
 .bmi-table tr.highlighted {
@@ -483,29 +500,63 @@ fieldset legend {
 }
 
 /* Explanation, Limitations, and Positive Habits Section Styles */
+.text-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 90%;
+  margin: 2rem auto;
+}
+
 .explanation,
 .limitations,
 .positive-habits {
-  padding: 20px 20px;
-  display: flex;
+  background-color: rgb(248, 238, 226);
+  padding-top: 20px;
   flex-direction: column;
-  gap: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
   width: 70%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.explanation:hover,
+.limitations:hover,
+.positive-habits:hover {
+  background-color: rgb(247, 234, 218);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
+  transition: 300ms ease-in-out;
+}
+
+.explanation h2,
+.limitations h2,
+.positive-habits h2 {
+  font-weight: 600;
+  padding-left: 1rem;
+  font-size: 1.8rem;
 }
 
 .explanation h3,
 .limitations h3,
 .positive-habits h3 {
-  margin: 24px 0;
-  font-weight: 600;
+  padding-left: 1rem;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .explanation p,
 .limitations p,
 .positive-habits p {
   color: #444343;
-  font-size: 17px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Limitations Section Styles */
