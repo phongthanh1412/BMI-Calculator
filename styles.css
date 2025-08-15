@@ -78,9 +78,9 @@ body {
 }
 
 .logo i {
-  font-size: 4rem;          
+  font-size: 4rem;
   padding: 0.5rem;
-  line-height: 1; 
+  line-height: 1;
 }
 
 h2 {
@@ -578,4 +578,72 @@ fieldset legend {
 .limitations .cards p {
   text-align: left;
   color: #444343;
+}
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  .form-and-table {
+    display: block;
+    width: 80%;
+  }
+
+  .text-container {
+    display: block;
+    padding-left: auto;
+  }
+
+  .calculator-and-result {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 2rem;
+  }
+
+  .bmi-table {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .explanation,
+  .limitations,
+  .positive-habits {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+/* Large phones / portrait tablets */
+@media (max-width: 768px) {
+  .form-and-table {
+    display: block;
+    width: 80%;
+  }
+
+  .text-container {
+    display: block;
+    padding-left: auto;
+  }
+
+  .calculator-and-result {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2rem;
+  }
+
+  .bmi-table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .explanation,
+  .limitations,
+  .positive-habits {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
